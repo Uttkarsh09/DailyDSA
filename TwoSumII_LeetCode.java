@@ -3,7 +3,8 @@
 import java.util.HashMap;
 
 class Solution {
-    public int[] twoSum(int[] numbers, int target) {
+
+    public int[] method1(int[] numbers, int target){
         HashMap<Integer, Integer> hm = new HashMap<>();
         int n = numbers.length, i, required;
         
@@ -17,6 +18,26 @@ class Solution {
         }
         return new int[]{-1, -1};
     }
+
+    // THIS IS A SIMPLER AND FASTER SOLUTION
+    public int[] fasterMethod(int[] numbers, int target){
+        int start=0, end=numbers.length-1;
+        
+        while(start < end){
+            int sum = numbers[start] + numbers[end];
+            if(sum == target) return new int[]{start+1, end+1};
+            if(sum < target){
+                ++start;
+            } else {
+                --end;
+            }
+        }
+        return new int[]{};
+    }
+
+    public int[] twoSum(int[] numbers, int target) {
+        return fasterMethod(numbers, target);
+    }
 }
 
 class TwoSumII_LeetCode{
@@ -24,7 +45,7 @@ class TwoSumII_LeetCode{
         Solution s = new Solution();
         int arr[] = {2,7,11,15};
         int target = 9;
-        
+
         int[] ans = s.twoSum(arr, target);
         
         System.out.print("[");
