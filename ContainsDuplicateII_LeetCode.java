@@ -1,6 +1,5 @@
 // https://leetcode.com/problems/contains-duplicate-ii/
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ContainsDuplicateII_LeetCode {
