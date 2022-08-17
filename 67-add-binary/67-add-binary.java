@@ -37,11 +37,7 @@ class Solution {
                 }
             } 
             else {
-                if(carry == 0){
-                    ans = "0" + ans;
-                } else {
-                    ans = "1" + ans;
-                }
+                ans = carry + ans;
                 carry = 1;
             }
         }
