@@ -1,12 +1,15 @@
 class Solution {
     public String addBinary(String a, String b) {
-        if(b.length() > a.length()){
+        int lenA = a.length(), lenB = b.length();
+        if(lenB > lenA){
             String temp = a;
             a = b;
             b = temp;
         }
+        lenA = a.length(); 
+        lenB = b.length();
         
-        int diff = a.length()-b.length();
+        int diff = lenA-lenB;
         for(int i=0 ; i<diff ; i++){
             b = "0" + b;
         }
@@ -14,7 +17,7 @@ class Solution {
         String ans = "";
         int carry = 0, sum, x, y;
         
-        for(int i=a.length()-1 ; i>=0 ; i--){
+        for(int i=lenA-1 ; i>=0 ; i--){
             x = Integer.parseInt(a.charAt(i)+"");
             y = Integer.parseInt(b.charAt(i)+"");
             a = a.substring(0, i);
@@ -42,6 +45,7 @@ class Solution {
                 carry = 1;
             }
         }
+        
         if(carry != 0)
             ans = carry + ans;
         
