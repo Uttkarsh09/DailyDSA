@@ -24,7 +24,7 @@ class Solution {
             sum = x + y;
             
             if(sum == 0){
-                ans = (sum + carry) + ans;
+                ans = carry + ans;
                 carry = 0;
             } 
             else if(sum == 1) {
