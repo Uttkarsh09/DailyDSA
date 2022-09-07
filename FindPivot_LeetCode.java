@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-pivot-index/submissions/
+// https://leetcode.com/problems/find-pivot-index/
 
 public class FindPivot_LeetCode {
     public static void main(String[] args) {
