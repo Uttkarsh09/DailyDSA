@@ -1,3 +1,11 @@
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+}
+
 public class MergeTwoSortedLists {
     public static ListNode createListNodes(int[] list){
         ListNode l = new ListNode();
@@ -10,12 +18,10 @@ public class MergeTwoSortedLists {
     }
 
     public static void main(String[] args) {
-        Solution s = new Solution();
-
         ListNode l1 = MergeTwoSortedLists.createListNodes(new int[]{1,2,4});
         ListNode l2 = MergeTwoSortedLists.createListNodes(new int[]{1,3,4});
         
-        ListNode ans = s.mergeTwoLists(l1, l2);
+        ListNode ans = mergeTwoLists(l1, l2);
 
         while(ans!=null){
             System.out.print(ans.val + " ");
@@ -23,18 +29,8 @@ public class MergeTwoSortedLists {
         }
         System.out.println();
     }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-}
-
-class Solution {
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+    
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         // slower answer
         // return nonRecursiveMerge(list1, list2);
 
@@ -45,7 +41,7 @@ class Solution {
     }
 
     // FASTER
-    public ListNode recursiveMerge(ListNode l1, ListNode l2, ListNode ans) {
+    public static ListNode recursiveMerge(ListNode l1, ListNode l2, ListNode ans) {
         if (l2 == null && l1 == null) {
             return ans;
         }
@@ -77,7 +73,7 @@ class Solution {
     }
 
     // SLOWER
-    public ListNode nonRecursiveMerge(ListNode list1, ListNode list2) {
+    public static ListNode nonRecursiveMerge(ListNode list1, ListNode list2) {
         ListNode ans = new ListNode(), ln = ans;
 
         while (true) {

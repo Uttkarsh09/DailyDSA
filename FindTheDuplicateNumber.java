@@ -1,14 +1,11 @@
 public class FindTheDuplicateNumber {
     public static void main(String[] args) {
-        Solution s = new Solution();
         int[] arr = {3,1,3,4,2};
-        int ans = s.findDuplicate(arr);
+        int ans = findDuplicate(arr);
         System.out.println(ans);
     }
-}
-
-class Solution {
-    public int findDuplicate(int[] nums) {
+    
+    public static int findDuplicate(int[] nums) {
         int i=0, n=nums.length;
         
         while(i < n){
@@ -27,7 +24,7 @@ class Solution {
         return -1;
     }
     
-    public void swap(int[] nums, int i, int j){
+    public static void swap(int[] nums, int i, int j){
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;

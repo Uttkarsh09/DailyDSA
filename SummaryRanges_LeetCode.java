@@ -1,4 +1,7 @@
-class Solution {
+import java.util.ArrayList;
+import java.util.List;
+
+class SummaryRanges_LeetCode {
     public List<String> summaryRanges(int[] nums) {
         
         int startNum, endNum, n=nums.length, curr, prev;

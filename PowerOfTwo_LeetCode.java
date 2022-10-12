@@ -2,12 +2,10 @@
 
 public class PowerOfTwo_LeetCode {
     public static void main(String[] args) {
-        Solution s = new Solution();
         int n = 1024;
-        boolean ans = s.isPowerOfTwo(n);
+        boolean ans = isPowerOfTwo(n);
         System.out.println(ans);
     }
-}
 
 // Let's take some good exampes :
 // number->binary form
@@ -25,8 +23,7 @@ public class PowerOfTwo_LeetCode {
 // we are gonna use this property for for all numbers which are powers of two
 // Reference - https://leetcode.com/problems/power-of-two/discuss/1638704/C%2B%2B-EASY-TO-SOLVE-oror-All-INTERVIEW-APPROACHES-with-Detailed-Explanations
 
-class Solution {
-    public boolean isPowerOfTwo(int n) {
+    public static boolean isPowerOfTwo(int n) {
         if(n<=0) return false;
         return (n & (n-1)) == 0;
     }

@@ -2,15 +2,12 @@
 
 public class PeakIndexMountainArray {
     public static void main(String[] args) {
-        Solution s = new Solution();
         int arr[] = {0,10,5,2};
-        int ans = s.peakIndexInMountainArray(arr);
+        int ans = peakIndexInMountainArray(arr);
         System.out.println(ans);
     }
-}
-
-class Solution {
-    public int peakIndexInMountainArray(int[] arr) {
+    
+    public static int peakIndexInMountainArray(int[] arr) {
         int start=0, end=arr.length-1, mid;
         
         while(start<=end){

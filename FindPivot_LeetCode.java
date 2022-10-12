@@ -2,15 +2,12 @@
 
 public class FindPivot_LeetCode {
     public static void main(String[] args) {
-        Solution s = new Solution();
         int[] nums = {1,7,3,6,5,6};
-        int ans = s.pivotIndex(nums);
+        int ans = pivotIndex(nums);
         System.out.println(ans);
     }
-}
-
-class Solution {
-    public int pivotIndex(int[] nums) {
+    
+    public static int pivotIndex(int[] nums) {
         int n=nums.length, lSum=0, sum=0;
         for(int i:nums) sum += i;
         

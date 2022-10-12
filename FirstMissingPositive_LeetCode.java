@@ -2,18 +2,15 @@
 
 public class FirstMissingPositive_LeetCode {
     public static void main(String[] args) {
-        Solution s = new Solution();
         int[] arr1 = {7,8,9,11,12};
         int[] arr2 = {3,4,-1,1};
-        int ans = s.firstMissingPositive(arr1);
+        int ans = firstMissingPositive(arr1);
         System.out.println(ans);
-        ans = s.firstMissingPositive(arr2);
+        ans = firstMissingPositive(arr2);
         System.out.println(ans);
     }
-}
-
-class Solution {
-    public int firstMissingPositive(int[] nums) {
+    
+    public static int firstMissingPositive(int[] nums) {
         int n = nums.length, i=0;
         
         while(i<n){
@@ -32,7 +29,7 @@ class Solution {
         return n+1;
     }
     
-    public void swap(int[] nums, int i, int j){
+    public static void swap(int[] nums, int i, int j){
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;

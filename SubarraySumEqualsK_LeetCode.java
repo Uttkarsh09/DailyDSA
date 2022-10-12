@@ -2,16 +2,15 @@ import java.util.HashMap;
 
 public class SubarraySumEqualsK_LeetCode {
     public static void main(String[] args){
-        Solution s = new Solution();
-        int ans = s.subarraySum_hashMap(new int[]{1, 1, 1}, 2);
+        int ans = subarraySum_hashMap(new int[]{1, 1, 1}, 2);
         System.out.println(ans);
 
         System.out.println("~~~~~~~~~~~~~~~");
 
-        ans = s.subarraySum_hashMap(new int[]{1, -1, 0}, 0);
+        ans = subarraySum_hashMap(new int[]{1, -1, 0}, 0);
         System.out.println(ans);
     }
-}
+
 
 // The idea here is to have a new array having first index as 0 and then the sum of all the elements in nums.
 // Why is the first element 0?
@@ -19,8 +18,7 @@ public class SubarraySumEqualsK_LeetCode {
 //      Hence we make a new array having [0, 7, 9, 12, 16]. so if we subtract elements at 2 indices (greater minus less) and if the result is 7 then we can confirm that it is a subarray.
 //      So for example here 0-7 and 16-9 these tell us that those elements add upto 7.
 
-class Solution {
-    public int subarraySum_bruteForce(int[] nums, int k) {
+    public static int subarraySum_bruteForce(int[] nums, int k) {
         // In this brute force solution we create every possible array and then subtract the greater index from the lower index and then check whether the result is k or not.
         // if it is k then we increase the count and move on and return it in the end.
         int count=0;
@@ -47,7 +45,7 @@ class Solution {
 // sum = 0
 // count = 1
 
-    public int subarraySum_hashMap(int[] nums, int k){
+    public static int subarraySum_hashMap(int[] nums, int k){
         // The only and major difference here is that we are using a hash map to check whether we had an element in the sum array that is [sum till now] - k.
         // And store the occourace count in the value of that key.cl
         

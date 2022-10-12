@@ -10,7 +10,7 @@ public class SearchA2DMatrixII_LeetCode {
             {18,21,23,26,30}};
         int target = 22;
 
-        Solution s = new Solution();
+        SomeSolution s = new SomeSolution();
         EfficientSolution es = new EfficientSolution();
         
         System.out.println(es.searchMatrix(matrix, target));
@@ -39,7 +39,7 @@ class EfficientSolution {
     }
 }
 
-class Solution {
+class SomeSolution {
     public boolean searchMatrix(int[][] matrix, int target) {
         int m = matrix.length-1, n = matrix[0].length-1;
         if(target < matrix[0][0]) return false;

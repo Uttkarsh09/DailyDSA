@@ -4,15 +4,12 @@ import java.util.HashMap;
 
 public class ContainsDuplicateII_LeetCode {
     public static void main(String[] args) {
-        Solution s = new Solution();
         int[] nums = {1,2,3,1};
         int k = 3;
-        System.out.println(s.containsNearbyDuplicate(nums, k));
+        System.out.println(containsNearbyDuplicate(nums, k));
     }
-}
 
-class Solution {
-    public boolean containsNearbyDuplicate(int[] nums, int k) {
+    public static boolean containsNearbyDuplicate(int[] nums, int k) {
         int n = nums.length;
         HashMap<Integer, Integer> hm = new HashMap<>();
         

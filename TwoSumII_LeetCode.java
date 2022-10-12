@@ -2,9 +2,22 @@
 
 import java.util.HashMap;
 
-class Solution {
+class TwoSumII_LeetCode{
+    public static void main(String[] args) {
+        int arr[] = {2,7,11,15};
+        int target = 9;
 
-    public int[] method1(int[] numbers, int target){
+        int[] ans = twoSum(arr, target);
+        
+        System.out.print("[");
+        for(int i=0;i<ans.length;i++){
+            System.out.print(ans[i]);
+            System.out.print(i!=ans.length-1 ? ", " : "");
+        }
+        System.out.println("]");
+    }
+
+    public static int[] method1(int[] numbers, int target){
         HashMap<Integer, Integer> hm = new HashMap<>();
         int n = numbers.length, i, required;
         
@@ -20,7 +33,7 @@ class Solution {
     }
 
     // THIS IS A SIMPLER AND FASTER SOLUTION
-    public int[] fasterMethod(int[] numbers, int target){
+    public static int[] fasterMethod(int[] numbers, int target){
         int start=0, end=numbers.length-1;
         
         while(start < end){
@@ -33,24 +46,7 @@ class Solution {
         return new int[]{};
     }
 
-    public int[] twoSum(int[] numbers, int target) {
+    public static int[] twoSum(int[] numbers, int target) {
         return fasterMethod(numbers, target);
-    }
-}
-
-class TwoSumII_LeetCode{
-    public static void main(String[] args) {
-        Solution s = new Solution();
-        int arr[] = {2,7,11,15};
-        int target = 9;
-
-        int[] ans = s.twoSum(arr, target);
-        
-        System.out.print("[");
-        for(int i=0;i<ans.length;i++){
-            System.out.print(ans[i]);
-            System.out.print(i!=ans.length-1 ? ", " : "");
-        }
-        System.out.println("]");
     }
 }

@@ -3,11 +3,10 @@
 
 public class FirstAndLastPosition_LeetCode {
     public static void main(String[] args) {
-        Solution s = new Solution();
         int[] nums = {5,7,7,8,8,10};
         int target = 8;
 
-        int[] ans = s.searchRange(nums, target);
+        int[] ans = searchRange(nums, target);
 
         System.out.print("[");
         for(int i=0;i<ans.length;i++){
@@ -16,10 +15,8 @@ public class FirstAndLastPosition_LeetCode {
         }
         System.out.println("]");
     }
-}
 
-class Solution {
-    private int binarySearch(int[] nums, int target){
+    private static int binarySearch(int[] nums, int target){
         int start=0, end=nums.length-1, mid;
         
         while(start<=end){
@@ -36,7 +33,7 @@ class Solution {
         return -1;
     }
     
-    public int[] searchRange(int[] nums, int target) {
+    public static int[] searchRange(int[] nums, int target) {
         int n = nums.length;
         if(n == 0) return new int[] {n-1, n-1};
         if(n == 1 && nums[0]==target) return new int[] {0, 0};      

@@ -3,18 +3,15 @@ import java.util.HashMap;
 
 public class IsomorphicStrings_LeetCode {
     public static void main(String[] args) {
-        Solution sol = new Solution();
         String s = "add";
         String t = "egg";
-        boolean ans = sol.isIsomorphic_fast(s, t);
+        boolean ans = isIsomorphic_fast(s, t);
         System.out.println(ans);
     }
-}
 
-class Solution {
     // O(2n) -> O(n)
     // FASTER
-    public boolean isIsomorphic_fast(String s, String t){
+    public static boolean isIsomorphic_fast(String s, String t){
         HashMap<String, String> hm_s_t = new HashMap<>();
         HashMap<String, String> hm_t_s = new HashMap<>();
         
@@ -49,7 +46,7 @@ class Solution {
     }
 
     // SLOWER
-    public boolean isIsomorphic_slow(String s, String t) {
+    public static boolean isIsomorphic_slow(String s, String t) {
         HashMap<String, String> hm = new HashMap<>();
         
         if(s.length() != t.length()){
